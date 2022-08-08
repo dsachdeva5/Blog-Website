@@ -1,0 +1,20 @@
+<%- include("partials/header")  -%>
+<h1>Admin</h1>
+<% homep.forEach(function(post){  %>
+
+  <h3><%= decodeURI(post.title) %></h3>
+  <p><%=post.content.substring(0,100)%>...<a href="posts/<%= post.title %>">Read more</a></p>
+    <form  action="/admin" method="post">
+      <input type="hidden" name="titlef" value="<%= post.title %>" />
+      <input type="hidden" name="contentf" value="<%= post.content %>" />
+      <input type="hidden" name="idf" value="<%= post.id %>" />
+      <%if(post.postsf!=null){%>
+      <input type="hidden" name="idff" value="<%= post.postsf.id %>" />
+      <%}%>
+
+  <button id="demo" type="submit" class="btn btn-primary" name="ok" value="publish" onclick="myFunction()">Publish</button>    <button type="submit" class="btn btn-danger" name="ok" value="clear">Clear</button>  <button type="submit" class="btn btn-warning" name="ok" value="homeclear">Clear from home</button> </form>
+
+  <%  })   %>
+
+
+<%- include("partials/footer")  -%>

@@ -1,0 +1,17 @@
+<%- include("partials/header")  -%>
+<h1>Compose</h1>
+<form  action="/compose" method="post">
+  <h5>Title</h5>
+  <input type="text" name="title" >
+  <h5>Content</h5>
+  <textarea name="content" cols="40" rows="5"></textarea>
+  <br>
+
+<button type="submit" class="btn btn-primary" onclick="myFunction()">Publish</button>
+</form>
+<script>
+function myFunction() {
+alert("Your blog is sumitted for review!");
+}
+</script>
+<%- include("partials/footer")  -%>
